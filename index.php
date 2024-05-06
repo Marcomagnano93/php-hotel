@@ -53,13 +53,43 @@
 </head>
 <body>
     <main>
-        <div class="container">
-            <div class="row">
+        <div class="container pt-3">
+            <div class="row gap-3">
                 <?php 
                     for ($i = 0; $i < count($hotels); $i++){
-                        ?>
-                            <p>hello world</p>
-                        <?php
+
+                    $hotel = $hotels[$i];
+                ?>
+                        <div class="card" style="width: 18rem;">
+                        <div class="card-header">
+                            <?php echo $hotel['name']; ?>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item"><?php echo $hotel['description']; ?></li>
+                            <li class="list-group-item">
+                                <?php 
+                                    if ($hotel['parking'] === true){
+                                        ?>
+                                            <span>Parcheggio disponibile</span>
+                                        <?php
+                                    }
+                                    elseif ($hotel['parking'] === false){
+                                        ?>
+                                            <span>Senza parcheggio</span>
+                                        <?php
+                                    }
+                                    else {
+                                        ?>
+                                            <a href="#">Contatta l'hotel</a>
+                                        <?php
+                                    }
+                                ?>
+                            </li>
+                            <li class="list-group-item"><span>Voto: <?php echo $hotel['vote']; ?>/5</span></li>
+                            <li class="list-group-item"><span>Distanza dal centro: <?php echo $hotel['distance_to_center']; ?> km</span></li>
+                        </ul>
+                        </div>
+                <?php
                     }
                 ?>
             </div>
