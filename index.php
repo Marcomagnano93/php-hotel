@@ -40,6 +40,10 @@
 
     ];
 
+// $parking_avaible = $_GET['parking'];
+
+// var_dump($parking_avaible);
+
 ?>
 
 <!doctype html>
@@ -52,6 +56,16 @@
 
 </head>
 <body>
+    <header>
+        <div class="container-fluid text-center">
+            <h1>Hotels</h1>
+        </div>
+        <nav class="container">
+            <form action="" method="get">
+           
+            </form>
+        </nav>
+    </header>
     <main>
         <div class="container pt-3">
             <div class="row gap-3">
@@ -65,7 +79,7 @@
                             <?php echo $hotel['name']; ?>
                         </div>
                         <ul class="list-group list-group-flush">
-                            <li class="list-group-item"><?php echo $hotel['description']; ?></li>
+                            <li class="list-group-item"><?php echo $hotel['description']; ?> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Totam, inventore.</li>
                             <li class="list-group-item">
                                 <?php 
                                     if ($hotel['parking'] === true){
